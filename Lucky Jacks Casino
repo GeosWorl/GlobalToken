@@ -1,0 +1,93 @@
+import random
+import time
+
+def slot_machine():
+    symbols = ["♠", "♥", "♦", "♣", "7", "★"]
+    slot_result = [random.choice(symbols) for _ in range(3)]
+    print("\nSpinning the reels...")
+    time.sleep(2)
+    print(f"🎰 {slot_result[0]} | {slot_result[1]} | {slot_result[2]} 🎰")
+
+    if len(set(slot_result)) == 1:
+        print("🎉 JACKPOT! You win 10x your bet!")
+        return 10
+    elif len(set(slot_result)) == 2:
+        print("✨ Small win! You win 2x your bet.")
+        return 2
+    else:
+        print("💀 You lost! Better luck next time.")
+        return 0
+
+def blackjack():
+    def draw_card():
+        return random.randint(1, 11)
+
+    player_hand = [draw_card(), draw_card()]
+    dealer_hand = [draw_card(), draw_card()]
+
+    print(f"\nYour cards: {player_hand} (Total: {sum(player_hand)})")
+    print(f"Dealer's first card: {dealer_hand[0]}")
+
+    while sum(player_hand) < 21:
+        choice = input("Hit or Stand? (h/s): ").lower()
+        if choice == 'h':
+            player_hand.append(draw_card())
+            print(f"Your cards: {player_hand} (Total: {sum(player_hand)})")
+        else:
+            break
+
+    if sum(player_hand) > 21:
+        print("💀 You busted! Dealer wins.")
+        return 0
+
+    print(f"\nDealer's turn... Dealer's cards: {dealer_hand} (Total: {sum(dealer_hand)})")
+    while sum(dealer_hand) < 17:
+        dealer_hand.append(draw_card())
+        print(f"Dealer draws a card: {dealer_hand} (Total: {sum(dealer_hand)})")
+        time.sleep(1)
+
+    if sum(dealer_hand) > 21 or sum(player_hand) > sum(dealer_hand):
+        print("🎉 You win! 2x your bet!")
+        return 2
+    elif sum(player_hand) == sum(dealer_hand):
+        print("🤝 It's a tie! You get your bet back.")
+        return 1
+    else:
+        print("💀 Dealer wins! You lost.")
+        return 0
+
+def casino():
+    balance = 100
+    print("\n🎰 Welcome to Lucky Jacks Casino! 🎰\n")
+   
+    while balance > 0:
+        print(f"\n💰 Your balance: ${balance}")
+        game_choice = input("Choose a game: (1) Slot Machine, (2) Blackjack, (3) Exit: ")
+
+        if game_choice == "1":
+            bet = int(input("Enter your bet: $"))
+            if bet > balance:
+                print("Not enough balance!")
+                continue
+            balance -= bet
+            winnings = bet * slot_machine()
+            balance += winnings
+
+        elif game_choice == "2":
+            bet = int(input("Enter your bet: $"))
+            if bet > balance:
+                print("Not enough balance!")
+                continue
+            balance -= bet
+            winnings = bet * blackjack()
+            balance += winnings
+
+        elif game_choice == "3":
+            print("Thanks for playing! Come back soon!")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+    print("💀 You ran out of money! Game over.")
+
+casino()       
