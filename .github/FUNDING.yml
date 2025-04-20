@@ -1,0 +1,9 @@
+# These are supported funding model platforms
+
+github: ["geomth"] # Replace with your GitHub Sponsors-enabled username(s)
+patreon: geomth-patreon # Replace with your Patreon username
+open_collective: geomth-collective # Replace with your Open Collective username
+ko_fi: geomth-kofi # Replace with your Ko-fi username
+tidelift: npm/global-token # Replace with your Tidelift package name
+buy_me_a_coffee: geomth-coffee # Replace with your Buy Me a Coffee username
+custom: ['https://geomth-custom-link.com'] # Replace with your custom sponsorship URL(s)

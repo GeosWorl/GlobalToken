@@ -24,6 +24,7 @@ jobs:
       - uses: actions/setup-node@v4.10.0
         with:
           node-version: 20
+          registry-url: https://registry.npmjs.org/
 
       - run: npm ci
       - run: npm test
@@ -33,6 +34,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+          scope: '@geomth'
+          always-auth: true
 
       - name: Cache Node.js modules
         uses: actions/cache@v3
@@ -46,6 +54,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
+          auth-token: ${{ secrets.NPM_TOKEN }} # Pass the token here
 
       - run: npm ci
       - run: npm publish
