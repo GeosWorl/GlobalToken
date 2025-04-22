@@ -1,0 +1,25 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "pack.name",
+    "description": "pack.description",
+    "uuid": "87e83454-5aa1-4c86-8e5e-bd6dc6a668da",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 18, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "4433da89-e04c-4bb7-9d68-27110ca6f85a",
+      "version": [1, 0, 0]
+    }
+  ],
+  "metadata": {
+    "authors": [ "undefined" ],
+    "generated_with": {
+      "blockception-minecraft-bedrock": [
+        "8.0.31"
+      ]
+    }
+  }
+}
