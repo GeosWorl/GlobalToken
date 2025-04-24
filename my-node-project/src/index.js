@@ -4,7 +4,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Secret key for signing the token
-const secretKey = process.env.JWT_SECRET || 'your-very-secure-secret'; // Use environment variable for security
+if (!process.env.JWT_SECRET) {
+    throw new Error('JWT_SECRET environment variable is not set. Please set it to a secure value.');
+}
+const secretKey = process.env.JWT_SECRET; // Use environment variable for security
 
 // Create a payload (data to include in the token)
 const payload = {
@@ -15,7 +18,9 @@ const payload = {
 // Sign the token
 const token = jwt.sign(payload, secretKey, { expiresIn: '1h' }); // Token expires in 1 hour
 
-console.log('Generated JWT:', token);
+if (process.env.NODE_ENV !== 'production') {
+    console.log('Generated JWT:', token);
+}
 
 // To verify the token (optional)
 try {

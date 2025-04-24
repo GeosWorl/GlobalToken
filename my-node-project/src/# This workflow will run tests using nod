@@ -54,11 +54,9 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-          auth-token: ${{ secrets.NPM_TOKEN }} # Pass the token here
+          auth-token: JK1SFHCY4Y2IXG7467WXXE8PS8I8RCUBGR # Token added here (line 57)
 
       - run: npm ci
       - run: npm publish
         env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-            
-	
+          NODE_AUTH_TOKEN: JK1SFHCY4Y2IXG7467WXXE8PS8I8RCUBGR # Token added here (line 62)
