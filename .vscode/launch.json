@@ -1,3 +1,6 @@
+// Copyright (c) [Year] [Lucky Jacks Casino]
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -5,29 +8,52 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Program",
             "type": "node",
             "request": "launch",
+            "name": "Launch Program",
             "program": "${workspaceFolder}/app.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+        {
+            "name": "Launch file",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${file}"
+        },
+        {
+            "name": "RobotCode: Remote-Attach",
+            "type": "robotcode",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 6612
+            },
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}",
+                    "remoteRoot": "."
+                }
+            ]
+        },
+        {
+            "name": "RobotCode: Local-Launch",
+            "type": "robotcode",
+            "request": "launch",
+            "program": "${workspaceFolder}/tests/robotcode_test.robot",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {},
             "console": "integratedTerminal"
         },
         {
-            "name": "Attach to Chrome",
             "type": "chrome",
-            "request": "attach",
-            "port": 9222,
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
-        },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach",
-            "pipeTransport": {
-                "pipeCwd": "${workspaceFolder}",
-                "pipeProgram": "/usr/bin/ssh",
-                "pipeArgs": ["user@remote-machine"],
-                "debuggerPath": "~/vsdbg/vsdbg"
-            }
         }
     ]
 }
