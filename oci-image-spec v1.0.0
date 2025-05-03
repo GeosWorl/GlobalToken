@@ -1,1 +1,35 @@
 
+`json
+{
+  "casinoInterior": {
+    "elements": [
+      {
+        "type": "cardTable",
+        "features": {
+          "shape": "round",
+          "color": "red",
+          "seating": "6",
+          "tableContent": "card dealing area"
+        }
+      },
+      {
+        "type": "slotMachines",
+        "count": "multiple",
+        "design": "classic",
+        "colors": ["purple", "red", "blue"]
+      },
+      {
+        "type": "chandeliers",
+        "style": "crystal",
+        "placement": "ceiling"
+      }
+    ],
+    "decor": {
+      "carpetPattern": "red with golden swirl",
+      "wallColor": "dark",
+      "ceilingLighting": "recessed and chandelier"
+    }
+  }
+}
+`
+
