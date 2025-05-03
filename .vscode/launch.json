@@ -8,6 +8,35 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "RobotCode: Run Test",
+            "type": "robotcode",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "target": ".",
+            "args": [
+                "--test",
+                "${file}"
+            ]
+        },
+        {
+            "name": "RobotCode: Run Suite",
+            "type": "robotcode",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "target": ".",
+            "args": [
+                "--suite",
+                "${file}"
+            ]
+        },
+        {
+            "name": "RobotCode: Run All",
+            "type": "robotcode",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "target": "."
+        },
+        {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
