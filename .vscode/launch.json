@@ -8,6 +8,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "ethereum nod${extensionInstallFolder:CoryKWashington/robotcode}",
+            "type": "go",
+            "request": "attach",
+            "mode": "remote",
+            "remotePath": "${workspaceFolder}",
+            "port": 2345,
+            "host": "127.0.0.1"
+        },
+        {
+            "name": "ethereum nod${extensionInstallFolder:CoryKWashington/robotcode}",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
             "name": "RobotCode: Run Test",
             "type": "robotcode",
             "request": "launch",
