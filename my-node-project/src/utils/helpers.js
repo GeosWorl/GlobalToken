@@ -7,7 +7,7 @@
  * @returns {string} The formatted date string.
  * @throws {TypeError} Throws if the provided argument is not a valid Date object.
  */
-function formatDate(date, locale = 'en-US', options = { year: 'numeric', month: '2-digit', day: '2-digit' }) {
+function localFormatDate(date, locale = 'en-US', options = { year: 'numeric', month: '2-digit', day: '2-digit' }) {
     if (!(date instanceof Date) || isNaN(date)) {
         throw new TypeError('Invalid date object provided.');
     }
@@ -26,7 +26,7 @@ module.exports = {
      * @returns {string} The formatted date string.
      * @throws {TypeError} Throws if the provided argument is not a valid Date object.
      */
-    formatDate,
+    localFormatDate, // Export the local function with a new name
 
     /**
      * Generates a unique identifier string prefixed with 'id-'.
