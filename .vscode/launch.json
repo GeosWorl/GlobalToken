@@ -1,3 +1,6 @@
+// Copyright (c) [Year] [Lucky Jacks Casino]
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -17,5 +20,101 @@
             ]
         }
 
+=======
+    "configurations": [
+        {
+            "name": "ethereum nod${extensionInstallFolder:CoryKWashington/robotcode}",
+            "type": "go",
+            "request": "attach",
+            "mode": "remote",
+            "remotePath": "${workspaceFolder}",
+            "port": 2345,
+            "host": "127.0.0.1"
+        },
+        {
+            "name": "ethereum nod${extensionInstallFolder:CoryKWashington/robotcode}",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "RobotCode: Run Test",
+            "type": "robotcode",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "target": ".",
+            "args": [
+                "--test",
+                "${file}"
+            ]
+        },
+        {
+            "name": "RobotCode: Run Suite",
+            "type": "robotcode",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "target": ".",
+            "args": [
+                "--suite",
+                "${file}"
+            ]
+        },
+        {
+            "name": "RobotCode: Run All",
+            "type": "robotcode",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "target": "."
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/app.js",
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+        {
+            "name": "Launch file",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${file}"
+        },
+        {
+            "name": "RobotCode: Remote-Attach",
+            "type": "robotcode",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 6612
+            },
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}",
+                    "remoteRoot": "."
+                }
+            ]
+        },
+        {
+            "name": "RobotCode: Local-Launch",
+            "type": "robotcode",
+            "request": "launch",
+            "program": "${workspaceFolder}/tests/robotcode_test.robot",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {},
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        }
+>>>>>>> 1fcdb5746bbe90c319a781a157da5bf24df42ad7
     ]
 }

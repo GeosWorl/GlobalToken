@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.logo {
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.geo {
+    color: #3498db; /* Blue color for "Cory's" */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.world {
+    color: #e74c3c; /* Red color for "And Micha's World" */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}

@@ -5,13 +5,16 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "release": "standard-version"
   },
   "dependencies": {
     "express": "^4.17.1"
   },
-  "devDependencies": {},
-  "keywords": [],
-  "author": "",
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  },
+  "keywords": ["nodejs", "express", "utilities"],
+  "author": "Cory K Washington (Geo)",
   "license": "ISC"
 }
